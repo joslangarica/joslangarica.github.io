@@ -35,7 +35,10 @@ class Star {
   }
   
   let stars = [];
-  let starsNum = 1000;
+  let starsNum = 5000;
+  let angle = 0;
+  let savingBrand = false;
+  let saveStart;
   
   function setup() {
 
@@ -50,16 +53,16 @@ class Star {
   
   function drawStars() {
     for (let star of stars) {
-      star.applyForce(createVector(0, 0, 0.01));
+      //Si cambias x,y,z de 0.00, 0.0, 0.01 a 0.01, 0.01, 0.01 se mueven en diagonal 
+   
+      star.applyForce(createVector(0.0, 0.0, 0.01));
       star.update();
       star.display();
       star.edges();
     }
   }
   
-  let angle = 0;
-  let savingBrand = false;
-  let saveStart;
+
   
   function draw() {
     background(50);
